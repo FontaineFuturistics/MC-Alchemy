@@ -1,0 +1,13 @@
+{
+  "itemGroup.mcalchemy": "Yarr Mod Tab",
+  "block.mcalchemy.example_block": "Example Block O' Mod",
+  "item.mcalchemy.example_item": "Example Pirate Item",
+
+  "mcalchemy.configuration.title": "MC Alchemy Configs",
+  "mcalchemy.configuration.section.mcalchemy.common.toml": "MC Alchemy Configs",
+  "mcalchemy.configuration.section.mcalchemy.common.toml.title": "MC Alchemy Configs",
+  "mcalchemy.configuration.items": "Item List",
+  "mcalchemy.configuration.logDirtBlock": "Log Dirt Block",
+  "mcalchemy.configuration.magicNumberIntroduction": "Magic Number Text",
+  "mcalchemy.configuration.magicNumber": "Magic Number"
+}
