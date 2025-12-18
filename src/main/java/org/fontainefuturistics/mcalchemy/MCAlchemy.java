@@ -34,6 +34,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(MCAlchemy.MODID)
 public class MCAlchemy {
+    /*
+    * Default Initialization stuff
+    */
     // Define mod id in a common place for everything to reference
     public static final String MODID = "mcalchemy";
     // Directly reference a slf4j logger
@@ -44,6 +47,10 @@ public class MCAlchemy {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "mcalchemy" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
+
+    /*
+    * Example Mod Content
+    */
 
     // Creates a new Block with the id "mcalchemy:example_block", combining the namespace and path
     public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
