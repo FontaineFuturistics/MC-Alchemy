@@ -36,6 +36,13 @@ public class AllBlocks {
         ) // End SimpleAlchemyBlock instantiation
     ); // End SIMPLE_ALCHEMY_BLOCK registerBlock() call
 
+    // TODO add the loot table so this block drops itself when broken
+    /*
+     * References for this:
+     * https://docs.neoforged.net/docs/resources/server/loottables/#datagen
+     * https://github.com/Tutorials-By-Kaupenjoe/NeoForge-Tutorial-1.21.X/blob/main/src/main/java/net/kaupenjoe/tutorialmod/datagen/ModBlockLootTableProvider.java
+     */
+
     // Register the block item for SimpleAlchemyBlock
     public static final DeferredItem<BlockItem> SIMPLE_ALCHEMY_BLOCK_ITEM = BLOCK_ITEMS.registerSimpleBlockItem(
         "simple_alchemy_block", // The registry name used for localization
@@ -43,7 +50,6 @@ public class AllBlocks {
         new Item.Properties() // This could be ommitted, but lets us set item properties
     );
 
-    // TODO create a creative menu tab for blocks
     // Create a DeferredRegister to hold the creative mode tab
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MCAlchemy.MODID);
     // Create a creative tab that holds all blocks
