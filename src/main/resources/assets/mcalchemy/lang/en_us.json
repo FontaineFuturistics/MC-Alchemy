@@ -1,6 +1,7 @@
 {
   "itemGroup.mcalchemy": "Example Mod Tab",
   "block.mcalchemy.example_block": "Example Block",
+  "block.mcalchemy.simple_alchemy_block": "Simple Alchemy Block",
   "item.mcalchemy.example_item": "Example Item",
 
   "mcalchemy.configuration.title": "MC Alchemy Configs",

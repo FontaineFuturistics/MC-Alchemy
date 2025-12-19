@@ -31,6 +31,9 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+// Our imports
+import org.fontainefuturistics.mcalchemy.AllBlocks; // Import AllBlocks to register blocks
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(MCAlchemy.MODID)
 public class MCAlchemy {
@@ -42,7 +45,7 @@ public class MCAlchemy {
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "mcalchemy" namespace
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID); // Block initialization step 1: Make a block Deferred Register
     // Create a Deferred Register to hold Items which will all be registered under the "mcalchemy" namespace
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "mcalchemy" namespace
@@ -52,9 +55,13 @@ public class MCAlchemy {
     * Example Mod Content
     */
 
+
     // Creates a new Block with the id "mcalchemy:example_block", combining the namespace and path
-    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
+    // Block initialization step 2: Create the DeferredBlock object and register it with the Deferred Register
+    //                              These references must be static so they must be done outside of the constructor
+    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE)); 
     // Creates a new BlockItem with the id "mcalchemy:example_block", combining the namespace and path
+    // Block initialization step 3: Create the DeferredItem object for the BlockItem and register it with the Deferred Register
     public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
 
     // Creates a new food item with the id "mcalchemy:example_id", nutrition 1 and saturation 2
@@ -75,6 +82,9 @@ public class MCAlchemy {
     public MCAlchemy(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        // Register blocks handled through AllBlocks
+        AllBlocks.register(modEventBus);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
