@@ -34,6 +34,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 // Our imports
 import org.fontainefuturistics.mcalchemy.AllBlocks; // Import AllBlocks to register blocks
 
+import org.fontainefuturistics.mcalchemy.AllItems; //import AllItems t--wait, these are never used. we don't have to.
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(MCAlchemy.MODID)
 public class MCAlchemy {
@@ -85,6 +87,12 @@ public class MCAlchemy {
 
         // Register blocks handled through AllBlocks
         AllBlocks.register(modEventBus);
+
+        //register AllItems items
+        AllItems.register(modEventBus);
+
+        //register BlockEntityTypes from AllBlockEntityTypes
+        AllBlockEntityTypes.register(modEventBus);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);

@@ -50,6 +50,18 @@ public class AllBlocks {
         new Item.Properties() // This could be ommitted, but lets us set item properties
     );
 
+    //register SimpleProcessorBlock
+    public static final DeferredBlock<SimpleProcessorBlock> SIMPLE_PROCESSOR_BLOCK = BLOCKS.registerBlock(
+        "simple_processor_block",
+        SimpleProcessorBlock::new
+    );
+    //register SimpleProcessorBlock's item
+    public static final DeferredItem<BlockItem> SIMPLE_PROCESSOR_BLOCK_ITEM = BLOCK_ITEMS.registerSimpleBlockItem(
+        "simple_processor_block",
+        SIMPLE_PROCESSOR_BLOCK,
+        new Item.Properties()
+    );
+
     // Create a DeferredRegister to hold the creative mode tab
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MCAlchemy.MODID);
     // Create a creative tab that holds all blocks
@@ -62,6 +74,7 @@ public class AllBlocks {
             .displayItems((parameters, output) -> {
                 // Add all blocks from this class to the tab
                 output.accept(SIMPLE_ALCHEMY_BLOCK_ITEM.get());
+                output.accept(SIMPLE_PROCESSOR_BLOCK_ITEM.get());
             })
             .build() // The final step: Fix the return type
     );
