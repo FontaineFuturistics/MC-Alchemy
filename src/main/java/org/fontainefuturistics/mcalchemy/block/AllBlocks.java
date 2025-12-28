@@ -16,6 +16,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+@SuppressWarnings("unused") // Because I have included the vanilla minecraft blocks as an import just for perusal
 public class AllBlocks {
     
     // Make the block register
@@ -53,21 +54,12 @@ public class AllBlocks {
         DeferredBlock<T> newBlock = BLOCKS.register(name, block);
 
         // Make it a block item
-        registerBlockItem(name, newBlock);
+        AllItems.registerBlockItem(name, newBlock);
 
         // Return it
         return newBlock;
 
     } // End registerBlock
-
-    // Helper method to create a BlockItem for a given block
-    // TODO why are we making a single line method that is only used once? remove this with a refactor
-    private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
-
-        // Register the block item with the registry from AllItems
-        AllItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-
-    } // End registerBlockItem
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);

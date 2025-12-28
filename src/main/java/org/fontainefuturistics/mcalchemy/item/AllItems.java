@@ -3,10 +3,12 @@ package org.fontainefuturistics.mcalchemy.item;
 import org.fontainefuturistics.mcalchemy.MCAlchemy;
 
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class AllItems {
     
@@ -33,5 +35,13 @@ public class AllItems {
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     } // End register
+
+    // Helper method to create a BlockItem for a given block, this will be used by AllBlocks when it creates a block
+    public static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
+
+        // Register the block item with the registry from AllItems
+        AllItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+
+    } // End registerBlockItem
 
 } // End AllItems class
