@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "mcalchemy:block/example_block"
+        }
+    }
+}

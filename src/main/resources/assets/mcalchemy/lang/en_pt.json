@@ -2,6 +2,9 @@
   "item.mcalchemy.example_item": "Item O' Example",
   "item.mcalchemy.raw_example_item": "Green Item O' Example",
 
+  "block.mcalchemy.example_block": "Block O' Example",
+  "block.mcalchemy.example_block_ore": "Rock O' Example",
+
   "mcalchemy.configuration.title": "Config O' MC Alchemy",
   "mcalchemy.configuration.section.mcalchemy.common.toml": "Config O' MC Alchemy",
   "mcalchemy.configuration.section.mcalchemy.common.toml.title": "Config O' MC Alchemy",

@@ -1,5 +1,6 @@
 package org.fontainefuturistics.mcalchemy;
 
+import org.fontainefuturistics.mcalchemy.block.AllBlocks;
 import org.fontainefuturistics.mcalchemy.item.AllItems;
 import org.slf4j.Logger;
 
@@ -53,8 +54,11 @@ public class MCAlchemy {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        // Register all items from ModItems
+        // Register mod items from AllItems
         AllItems.register(modEventBus);
+
+        // Register mod blocks from AllBlocks
+        AllBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -73,6 +77,11 @@ public class MCAlchemy {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) { // Add each item one at a time to the ingredients tab
             event.accept(AllItems.EXAMPLE_ITEM);
             event.accept(AllItems.RAW_EXAMPLE_ITEM);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(AllBlocks.EXAMPLE_BLOCK);
+            event.accept(AllBlocks.EXAMPLE_BLOCK_ORE);
         }
 
     }

@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "mcalchemy:block/example_block_ore"
+    }
+}

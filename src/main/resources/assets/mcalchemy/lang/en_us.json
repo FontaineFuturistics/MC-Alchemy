@@ -2,6 +2,9 @@
   "item.mcalchemy.example_item": "Example Item",
   "item.mcalchemy.raw_example_item": "Raw Example Item",
 
+  "block.mcalchemy.example_block": "Block of Example",
+  "block.mcalchemy.example_block_ore": "Example Ore",
+
   "mcalchemy.configuration.title": "MC Alchemy Configs",
   "mcalchemy.configuration.section.mcalchemy.common.toml": "MC Alchemy Configs",
   "mcalchemy.configuration.section.mcalchemy.common.toml.title": "MC Alchemy Configs",

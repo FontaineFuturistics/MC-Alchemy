@@ -34,4 +34,4 @@ public class AllItems {
         ITEMS.register(eventBus);
     } // End register
 
-} // End ModItems
+} // End AllItems class
