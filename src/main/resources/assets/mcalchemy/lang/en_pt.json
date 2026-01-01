@@ -4,6 +4,9 @@
 
   "block.mcalchemy.example_block": "Block O' Example",
   "block.mcalchemy.example_block_ore": "Rock O' Example",
+    
+  "creativetab.mcalchemy.mod_items": "Bucket O' MCAlchemy Items",
+  "creativetab.mcalchemy.mod_blocks": "Bucket O' MCAlchemy Blocks",
 
   "mcalchemy.configuration.title": "Config O' MC Alchemy",
   "mcalchemy.configuration.section.mcalchemy.common.toml": "Config O' MC Alchemy",

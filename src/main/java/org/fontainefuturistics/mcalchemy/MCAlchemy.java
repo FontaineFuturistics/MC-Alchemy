@@ -1,6 +1,7 @@
 package org.fontainefuturistics.mcalchemy;
 
 import org.fontainefuturistics.mcalchemy.block.AllBlocks;
+import org.fontainefuturistics.mcalchemy.item.AllCreativeTabs;
 import org.fontainefuturistics.mcalchemy.item.AllItems;
 import org.slf4j.Logger;
 
@@ -38,6 +39,9 @@ public class MCAlchemy {
         // Note that this is necessary if and only if we want *this* class (MCAlchemy) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+
+        // Register the creative mode tabs
+        AllCreativeTabs.register(modEventBus);
 
         // Register mod items from AllItems
         AllItems.register(modEventBus);

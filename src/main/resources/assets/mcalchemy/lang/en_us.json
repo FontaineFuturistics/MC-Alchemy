@@ -5,6 +5,9 @@
   "block.mcalchemy.example_block": "Block of Example",
   "block.mcalchemy.example_block_ore": "Example Ore",
 
+  "creativetab.mcalchemy.mod_items": "MCAlchemy Items",
+  "creativetab.mcalchemy.mod_blocks": "MCAlchemy Blocks",
+
   "mcalchemy.configuration.title": "MC Alchemy Configs",
   "mcalchemy.configuration.section.mcalchemy.common.toml": "MC Alchemy Configs",
   "mcalchemy.configuration.section.mcalchemy.common.toml.title": "MC Alchemy Configs",
